@@ -9,8 +9,10 @@ license = "MIT OR Apache-2.0"
 keywords = ["bevy"]
 
 [features]
+default = ["bevy_reflect"]
 serialize = ["serde", "smol_str/serde", "bevy_ecs/serialize"]
-bevy_reflect = ["dep:bevy_reflect", "bevy_input/bevy_reflect"]
+bevy_reflect = ["dep:bevy_reflect"]
+# bevy_reflect = ["dep:bevy_reflect", "bevy_input/bevy_reflect"]
 
 [dependencies]
 # bevy

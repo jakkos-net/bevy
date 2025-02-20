@@ -147,8 +147,7 @@ impl Plugin for WindowPlugin {
         }
 
         // Register event types
-        app.register_type::<WindowEvent>()
-            .register_type::<WindowResized>()
+        app.register_type::<WindowResized>()
             .register_type::<RequestRedraw>()
             .register_type::<WindowCreated>()
             .register_type::<WindowCloseRequested>()

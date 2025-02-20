@@ -411,11 +411,6 @@ impl AppLifecycle {
     derive(serde::Serialize, serde::Deserialize),
     reflect(Serialize, Deserialize)
 )]
-#[cfg_attr(feature = "bevy_reflect", derive(Reflect), reflect(Debug, PartialEq))]
-#[cfg_attr(
-    all(feature = "serialize", feature = "bevy_reflect"),
-    reflect(Serialize, Deserialize)
-)]
 // FIXME(15321): solve CI failures, then replace with `#[expect()]`.
 #[allow(missing_docs, reason = "Not all docs are written yet (#3492).")]
 pub enum WindowEvent {
