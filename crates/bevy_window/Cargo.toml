@@ -10,6 +10,7 @@ keywords = ["bevy"]
 
 [features]
 serialize = ["serde", "smol_str/serde", "bevy_ecs/serialize"]
+bevy_reflect = ["dep:bevy_reflect", "bevy_input/bevy_reflect"]
 
 [dependencies]
 # bevy
@@ -21,7 +22,7 @@ bevy_math = { path = "../bevy_math", version = "0.15.2" }
 bevy_reflect = { path = "../bevy_reflect", version = "0.15.2", features = [
   "glam",
   "smol_str",
-] }
+], optional = true}
 bevy_utils = { path = "../bevy_utils", version = "0.15.2" }
 
 # other

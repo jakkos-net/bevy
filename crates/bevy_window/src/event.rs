@@ -405,11 +405,15 @@ impl AppLifecycle {
 /// access window events in the order they were received from the
 /// operating system. Otherwise, the event types are individually
 /// readable with `EventReader<E>` (e.g. `EventReader<KeyboardInput>`).
-#[derive(Event, Debug, Clone, PartialEq, Reflect)]
-#[reflect(Debug, PartialEq)]
+#[derive(Event, Debug, Clone, PartialEq)]
 #[cfg_attr(
     feature = "serialize",
     derive(serde::Serialize, serde::Deserialize),
+    reflect(Serialize, Deserialize)
+)]
+#[cfg_attr(feature = "bevy_reflect", derive(Reflect), reflect(Debug, PartialEq))]
+#[cfg_attr(
+    all(feature = "serialize", feature = "bevy_reflect"),
     reflect(Serialize, Deserialize)
 )]
 // FIXME(15321): solve CI failures, then replace with `#[expect()]`.
